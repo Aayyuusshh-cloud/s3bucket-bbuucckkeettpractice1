@@ -10,3 +10,13 @@
   }
 }
 
+locals {
+  env = "prod"  
+
+  instance_type = local.env == "prod" ? "t3.large" : "t2.micro"
+}
+
+output "selected_instance_type" {
+  value = local.instance_type
+}
+
